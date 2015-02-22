@@ -15,7 +15,16 @@ public class Practica1s12015_201314715 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("hola mundo 3");
+        //look and feel tipo nimbus
+        try{
+                 javax.swing.UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+            } 
+         
+         catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+  java.util.logging.Logger.getLogger(Practica1s12015_201314715.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+}
+        Inicio in = new Inicio();
+        in.setVisible(true);
         // TODO code application logic here
     }
     
