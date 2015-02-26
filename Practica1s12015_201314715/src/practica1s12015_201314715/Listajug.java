@@ -14,6 +14,10 @@ public class Listajug {
  private Nodojugap cabecera;
  private Nodojugap ultimoj;
 
+    public Nodojugap getUltimoj() {
+        return ultimoj;
+    }
+
     public Nodojugap getCabecera() {
         return cabecera;
     }
@@ -71,10 +75,15 @@ public class Listajug {
   }
  }
  public void addExtras(Nodojdat nuevoextra){
-     if(cabecera.getCabdato()==null){
-         cabecera.setCabdato(nuevoextra);
+Nodojdat    aux1 = cabecera.getCabdato();
+Nodojdat aux2 = ultimoj.getUltimod();
+     if(aux1==null){
+        cabecera.setCabdato(nuevoextra);
          ultimoj.setUltimod(cabecera.getCabdato());
+         
+        
      }else{
+         
          ultimoj.getUltimod().setSigd(nuevoextra);
          ultimoj.setUltimod(nuevoextra);
      }
@@ -106,6 +115,7 @@ public class Listajug {
  
      //copia auxiliar del subnodo
      Nodojugap clonjugador2 = cabecera;
+     String nota="";
      //recorrer la lista principal
      while(clonjugador2 !=null){
          //luego verificamos que el contenudo de dicho nodo sea
@@ -113,11 +123,14 @@ public class Listajug {
          if(clonjugador2.getTitulo().equals("heroes")){
              //segundo ciclo para recorrer los subnodos
             clonjugador2.recorrerd();
-             }else if(clonjugador2.getTitulo().equals("villano")){
+            System.out.println("cont heroe");
+             }else if(clonjugador2.getTitulo().equals("villanos")){
              clonjugador2.recorrerd();
+             System.out.println("cont villano");
          }else{
                  System.out.println("no se encontro nada");
              }
+         
          clonjugador2 = clonjugador2.getSig();
      }
  }

@@ -8,6 +8,7 @@ package practica1s12015_201314715;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -46,6 +47,7 @@ public class Inicio extends javax.swing.JFrame {
    
     public static Listajug jugadores = new Listajug();
    String heroe = "heroes";
+   String villano = "villanos";
     
 
     /**
@@ -126,6 +128,8 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 //jugadores.addDato();
+        jugadores.addJugador(new  Nodojugap(villano));
+        
 CrearVillano vi = new CrearVillano();
 this.setVisible(false);
 vi.setVisible(true);
@@ -155,6 +159,7 @@ System.out.println("-----separador---------");
         jugadores.Recorrerjugador();
         System.out.println("-----separador---2---------");
         jugadores.Recorrealljugador();
+        JOptionPane.showMessageDialog(null, "verificacion de lista");
         /*System.out.println("el tamaño de la lista es: "+jugadores.getTamaño());
         for(int i=0; i<jugadores.getTamaño();i++){
     System.out.println("nodo: "+i+" es "+jugadores.getCampo(i));

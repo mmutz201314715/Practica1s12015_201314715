@@ -18,6 +18,8 @@ public class CrearVillano extends javax.swing.JFrame {
         initComponents();
     }
 Inicio in = new Inicio();
+Listajug jugar = Inicio.jugadores;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,6 +46,11 @@ Inicio in = new Inicio();
         jLabel3.setText("Cantidad:");
 
         jButton1.setText("agregar mas campos");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Confirmar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -101,17 +108,21 @@ Inicio in = new Inicio();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-//in.villanos.addDato(txt1.getText(), jLabel2.getText());
-//in.villanos.addDato(txt2.getText(),jLabel3.getText());
-/*
-for(int i=0; i<in.villanos.getTamaño();i++){
-    
-    System.out.println("pos dato en y"+in.villanos.getCampo(i)+":"+in.villanos.getDato(i));
-}
-*/
+        jugar.addExtras(new Nodojdat(jLabel2.getText(), txt1.getText()));
+       jugar.addExtras(new Nodojdat(jLabel3.getText(), txt2.getText()));
+     jugar.Recorrerjugador();
+       System.out.println("------separador---------");
+jugar.Recorrealljugador();
 in.setVisible(true);
 this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+Extracampos ec = new Extracampos();
+ec.setVisible(true);
+this.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

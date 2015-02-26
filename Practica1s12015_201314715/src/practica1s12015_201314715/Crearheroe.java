@@ -21,7 +21,7 @@ public class Crearheroe extends javax.swing.JFrame {
     
 Inicio in = new Inicio();
 String prueba = in.heroe;
-Listajug jugar = in.jugadores;
+Listajug jugar = Inicio.jugadores;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -116,31 +116,8 @@ Listajug jugar = in.jugadores;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-//no estoy seguro si este modo correcto de insertar los subnodos o al nodo heroe
-       // in.jugadores.addExtras(jLabel1.getText(), nombretxt.getText());
-        //in.jugadores.addExtras(jLabel2.getText(), cantidadtxt.getText());
-       
-      //  
-  /*
-try{
-for(int i=0; i<in.jugadores.getTamaño(); i++){
-  if(in.jugadores.getCabecera().getTitulo().equals("titulo")){
-      
-    while(aux1 !=null){
-       System.out.println(in.jugadores.getCabecera().getCabdato().getEtiqueta()+"   :"+in.jugadores.getCabecera().getCabdato().getContenido());
-     aux1= aux1.getSigd();
-    }
-    }else{
-            System.out.println("no se encontro nada");
-            }
-    
-  }
-}catch(Exception e){
-    System.out.print(e);
-}
-*/
-        jugar.addExtras(new Nodojdat(jLabel1.getText(), nombretxt.getText()));
-       jugar.addExtras(new Nodojdat(jLabel2.getText(), cantidadtxt.getText()));
+        jugar.addExtras(new Nodojdat(jLabel2.getText(), nombretxt.getText()));
+       jugar.addExtras(new Nodojdat(jLabel3.getText(), cantidadtxt.getText()));
        jugar.Recorrerjugador();
        System.out.println("------separador---------");
 jugar.Recorrealljugador();
@@ -150,8 +127,8 @@ this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-jugar.addExtras(new Nodojdat(jLabel1.getText(), nombretxt.getText()));
-       jugar.addExtras(new Nodojdat(jLabel2.getText(), cantidadtxt.getText()));
+jugar.addExtras(new Nodojdat(jLabel2.getText(), nombretxt.getText()));
+       jugar.addExtras(new Nodojdat(jLabel3.getText(), cantidadtxt.getText()));
         Extracampos ec = new Extracampos();
 ec.setVisible(true);
 this.setVisible(false);
